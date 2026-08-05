@@ -16,6 +16,7 @@
                                 &kp LEFT_WIN  &kp SPACE  &kp BACKSPACE    &kp ENTER      &kp SPACE
                                               &mo 3      &to 7            &kp BACKSPACE
             >;
-        };
+        	};
+    	};
     };
 };
