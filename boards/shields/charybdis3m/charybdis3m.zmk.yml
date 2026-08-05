@@ -1,0 +1,11 @@
+file_format: "1"
+id: charybdis3m
+name: Charybdis3M
+type: shield
+url: https://github.com/Bastardkb/Charybdis/
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - charybdis3m_left
+  - charybdis3m_right
