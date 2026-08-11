@@ -7,7 +7,6 @@
 #include "charybdis3m.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <input/processors/zmk-input-processor-keybind.dtsi>
 
 
 &default_transform {
@@ -72,8 +71,9 @@
         device = <&trackball>;
 	scroller {
 		layers = <3>;
-//		input-processors = <&zip_xy_to_scroll_mapper>;
-		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+		//input-processors = <&zip_xy_to_scroll_mapper>;
+		//input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_to_scroll_mapper>;
 
 	};
     };
