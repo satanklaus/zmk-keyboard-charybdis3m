@@ -55,7 +55,7 @@
         motion-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
-        res-cpi = <1600>;
+        res-cpi = <800>;
         status = "okay";
 	invert-x;
 	invert-y;
