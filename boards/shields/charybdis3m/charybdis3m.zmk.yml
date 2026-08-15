@@ -9,3 +9,4 @@ features:
 siblings:
   - charybdis3m_left
   - charybdis3m_right
+  - charybdis3m_central

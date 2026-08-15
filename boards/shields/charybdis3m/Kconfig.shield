@@ -1,3 +1,6 @@
+config SHIELD_CHARYBDIS3M_CENTRAL
+    def_bool $(shields_list_contains,charybdis3m_central)
+
 config SHIELD_CHARYBDIS3M_LEFT
     def_bool $(shields_list_contains,charybdis3m_left)
 
