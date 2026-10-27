@@ -13,6 +13,10 @@
     status = "okay";
 };
 
+&pb {
+    status = "okay";
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;

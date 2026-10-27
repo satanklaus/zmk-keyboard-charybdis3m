@@ -35,6 +35,18 @@
         };
     };
 
+    /* Pulses P1.15 on the dongle (zmk-behavior-pushbutton); enabled only in
+     * the central overlay so the keymap can reference &pb on every board. */
+    behaviors {
+        pb: pushbutton {
+            compatible = "zmk,behavior-pushbutton";
+            #binding-cells = <0>;
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+            press-duration-ms = <1000>;
+            status = "disabled";
+        };
+    };
+
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
