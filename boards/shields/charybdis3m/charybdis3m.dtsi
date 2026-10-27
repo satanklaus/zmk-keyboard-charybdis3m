@@ -1,11 +1,12 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &charybdis3m_layout;
     };
 
     default_transform: keymap_transform_0 {
@@ -20,6 +21,72 @@
 				                RC(4,3) RC(4,2) RC(4,1)                   RC(4,7)  RC(4,8)
 						        RC(4,5) RC(4,4)                   RC(4,10) 
         >;
+    };
+
+    /* Approximate key positions for ZMK Studio, in matrix-transform order:
+     * four 12-key rows, then the 3+2 and 2+1 thumb rows. */
+    charybdis3m_layout: charybdis3m_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Charybdis 3m";
+        transform = <&default_transform>;
+        keys  //                     w   h     x    y     rot   rx   ry
+            = <&key_physical_attrs 100 100     0   30       0    0    0>
+            , <&key_physical_attrs 100 100   100   30       0    0    0>
+            , <&key_physical_attrs 100 100   200   10       0    0    0>
+            , <&key_physical_attrs 100 100   300    0       0    0    0>
+            , <&key_physical_attrs 100 100   400   10       0    0    0>
+            , <&key_physical_attrs 100 100   500   20       0    0    0>
+            , <&key_physical_attrs 100 100   900   20       0    0    0>
+            , <&key_physical_attrs 100 100  1000   10       0    0    0>
+            , <&key_physical_attrs 100 100  1100    0       0    0    0>
+            , <&key_physical_attrs 100 100  1200   10       0    0    0>
+            , <&key_physical_attrs 100 100  1300   30       0    0    0>
+            , <&key_physical_attrs 100 100  1400   30       0    0    0>
+            , <&key_physical_attrs 100 100     0  130       0    0    0>
+            , <&key_physical_attrs 100 100   100  130       0    0    0>
+            , <&key_physical_attrs 100 100   200  110       0    0    0>
+            , <&key_physical_attrs 100 100   300  100       0    0    0>
+            , <&key_physical_attrs 100 100   400  110       0    0    0>
+            , <&key_physical_attrs 100 100   500  120       0    0    0>
+            , <&key_physical_attrs 100 100   900  120       0    0    0>
+            , <&key_physical_attrs 100 100  1000  110       0    0    0>
+            , <&key_physical_attrs 100 100  1100  100       0    0    0>
+            , <&key_physical_attrs 100 100  1200  110       0    0    0>
+            , <&key_physical_attrs 100 100  1300  130       0    0    0>
+            , <&key_physical_attrs 100 100  1400  130       0    0    0>
+            , <&key_physical_attrs 100 100     0  230       0    0    0>
+            , <&key_physical_attrs 100 100   100  230       0    0    0>
+            , <&key_physical_attrs 100 100   200  210       0    0    0>
+            , <&key_physical_attrs 100 100   300  200       0    0    0>
+            , <&key_physical_attrs 100 100   400  210       0    0    0>
+            , <&key_physical_attrs 100 100   500  220       0    0    0>
+            , <&key_physical_attrs 100 100   900  220       0    0    0>
+            , <&key_physical_attrs 100 100  1000  210       0    0    0>
+            , <&key_physical_attrs 100 100  1100  200       0    0    0>
+            , <&key_physical_attrs 100 100  1200  210       0    0    0>
+            , <&key_physical_attrs 100 100  1300  230       0    0    0>
+            , <&key_physical_attrs 100 100  1400  230       0    0    0>
+            , <&key_physical_attrs 100 100     0  330       0    0    0>
+            , <&key_physical_attrs 100 100   100  330       0    0    0>
+            , <&key_physical_attrs 100 100   200  310       0    0    0>
+            , <&key_physical_attrs 100 100   300  300       0    0    0>
+            , <&key_physical_attrs 100 100   400  310       0    0    0>
+            , <&key_physical_attrs 100 100   500  320       0    0    0>
+            , <&key_physical_attrs 100 100   900  320       0    0    0>
+            , <&key_physical_attrs 100 100  1000  310       0    0    0>
+            , <&key_physical_attrs 100 100  1100  300       0    0    0>
+            , <&key_physical_attrs 100 100  1200  310       0    0    0>
+            , <&key_physical_attrs 100 100  1300  330       0    0    0>
+            , <&key_physical_attrs 100 100  1400  330       0    0    0>
+            , <&key_physical_attrs 100 100   330  430       0    0    0>
+            , <&key_physical_attrs 100 100   440  440    1500  490  490>
+            , <&key_physical_attrs 100 100   550  470    3000  600  520>
+            , <&key_physical_attrs 100 100   810  450 (-1500)  860  500>
+            , <&key_physical_attrs 100 100   920  430       0    0    0>
+            , <&key_physical_attrs 100 100   420  550    1500  470  600>
+            , <&key_physical_attrs 100 100   530  580    3000  580  630>
+            , <&key_physical_attrs 100 100   860  560 (-1500)  910  610>
+            ;
     };
 
     /* Trackball on the right half, proxied to the central over split.
@@ -40,6 +107,7 @@
     behaviors {
         pb: pushbutton {
             compatible = "zmk,behavior-pushbutton";
+            display-name = "Push Button";
             #binding-cells = <0>;
             gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
             press-duration-ms = <1000>;
