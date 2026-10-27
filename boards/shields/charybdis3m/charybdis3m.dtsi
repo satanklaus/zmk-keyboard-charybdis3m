@@ -110,7 +110,7 @@
             display-name = "Push Button";
             #binding-cells = <0>;
             gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
-            press-duration-ms = <1000>;
+            press-duration-ms = <200>;
             status = "disabled";
         };
     };
